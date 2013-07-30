@@ -1,0 +1,16 @@
+
+
+
+#include "Config.h"
+
+{% for key,val in conf.items() %}
+
+string Config::get{{key.title()}}(){
+	return {{key.title()}};
+}
+
+void Config::set{{key.title()}}(string new{{key.title()}}){
+	port = new{{key.title()}};
+}
+
+{% endfor %}
