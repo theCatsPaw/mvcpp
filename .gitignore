@@ -1,6 +1,7 @@
 html/
 latex/
 obj/*.o
+mvcpp*
 
 # Compiled Object files
 *.slo
