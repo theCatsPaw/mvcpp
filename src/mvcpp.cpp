@@ -10,26 +10,32 @@ using namespace std;
 #include "lib/mvcpp/logging.h"
 #include "lib/mvcpp/mvcpp.h"
 
-using namespace mvc;
-mvcpp framework;
+#include "app/gensrc/Config.hpp"
 
-// This function will be called by mongoose on every new request.
+Config conf;
+using namespace mvcpp;
+Mvcpp framework;
+
+/**
+* This function will be called by mongoose on every new request. Mvcpp::handle(struct mg_connection *conn)
+*/
 static int begin_request_handler(struct mg_connection *conn) {
 
 	return framework.handle(conn);
 
 }
 
+
 int main(void) {
 	Logger log = Logger("main");
-	log.setLevel(mvc::TRACE);
+	log.setLevel(mvcpp::Level::TRACE);
 	log.trace("main()");
 
 	struct mg_context *ctx;
 	struct mg_callbacks callbacks;
 
 	// List of options. Last element must be NULL.
-	const char *options[] = { "listening_ports", "8080", NULL };
+	const char *options[] = { "listening_ports", conf.getPort().c_str(), NULL };
 
 	log.trace("setting callbacks");
 	// Prepare callbacks structure. We have only one callback, the rest are NULL.
