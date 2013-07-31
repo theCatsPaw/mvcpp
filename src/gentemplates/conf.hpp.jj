@@ -17,9 +17,15 @@ private:
 public:
 {% for key,val in conf.items() %}
 
+	/**
+	* @return @c string returns the {{key.title()}} config option
+	*/
 	string get{{key.title()}}();
 
-	string set{{key.title()}}(string new{{key.title()}});
+	/**
+	* @param string the {{key.title()}} to be set
+	*/
+	void set{{key.title()}}(string new{{key.title()}});
 
 {% endfor %}
 

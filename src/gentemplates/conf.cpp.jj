@@ -1,7 +1,7 @@
 
 
 
-#include "Config.h"
+#include "Config.hpp"
 
 {% for key,val in conf.items() %}
 
@@ -10,7 +10,7 @@ string Config::get{{key.title()}}(){
 }
 
 void Config::set{{key.title()}}(string new{{key.title()}}){
-	port = new{{key.title()}};
+	{{key.title()}} = new{{key.title()}};
 }
 
 {% endfor %}
