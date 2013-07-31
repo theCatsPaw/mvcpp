@@ -13,7 +13,7 @@ OBJS = obj/mvcpp.o obj/mvcpplib.o obj/mongoose.o obj/logging.o obj/request.o \
 		obj/IP.o obj/config.o
 
 TARGET = mvcpp.exe
-all: build run
+all: gensrc build run
 
 run: build
 	$(TARGET)
