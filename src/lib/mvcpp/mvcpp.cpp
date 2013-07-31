@@ -14,18 +14,18 @@
 
 using namespace std;
 
-namespace mvc {
+namespace mvcpp {
 
-mvcpp::mvcpp() {
+Mvcpp::Mvcpp() {
 	return;
 
 }
 
-mvcpp::~mvcpp() {
+Mvcpp::~Mvcpp() {
 	return;
 }
 
-int mvcpp::handle(struct mg_connection *conn){
+int Mvcpp::handle(struct mg_connection *conn){
 
 	// pack request info in object
 	const struct mg_request_info *request_info = mg_get_request_info(conn);

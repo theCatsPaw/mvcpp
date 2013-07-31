@@ -9,15 +9,15 @@
 #define MVCPP_H_
 
 #include "logging.h"
-namespace mvc {
-class mvcpp {
+namespace mvcpp {
+class Mvcpp {
 
 private:
 	Logger log = Logger("Request");
 
 public:
-	mvcpp();
-	virtual ~mvcpp();
+	Mvcpp();
+	virtual ~Mvcpp();
 
 	int handle(struct mg_connection *conn);
 };

@@ -18,12 +18,14 @@
 using namespace std;
 
 
-namespace mvc {
+namespace mvcpp {
 
 
 #ifndef LOGSTREAM
 	#define LOGSTREAM std::cout
 #endif
+
+namespace Level {
 
 enum LEVEL{
 		TRACE = 0,
@@ -34,18 +36,21 @@ enum LEVEL{
 		CRITICAL
 	};
 
+} // namespace Level
+
+
 class Logger {
 public:
 	string name;
 
-	LEVEL lvl;
+	Level::LEVEL lvl;
 
 
 	Logger(string loggername);
 
-	void log(string toLog, LEVEL logLevel);
+	void log(string toLog, Level::LEVEL logLevel);
 
-	void setLevel(LEVEL logLevel);
+	void setLevel(Level::LEVEL logLevel);
 
 	void trace(string toLog);
 
@@ -62,6 +67,7 @@ public:
 
 #define LOG(name) LOGSTREAM <<__FILE__ <<"["<<__LINE__<<"] " << #name << " -> " << name << std::endl;
 #define LOGSTR(str) LOGSTREAM <<__FILE__ <<"["<<__LINE__<<"] " <<  str << std::endl;
+
 
 } // namespace mvc
 

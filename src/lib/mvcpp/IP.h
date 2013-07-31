@@ -11,7 +11,7 @@
 #include <string>
 using namespace std;
 
-namespace mvc {
+namespace mvcpp {
 
 class IP {
 
@@ -24,5 +24,5 @@ public:
 };
 
 
-} /* namespace mvc */
+} /* namespace mvcpp*/
 #endif /* IP_H_ */

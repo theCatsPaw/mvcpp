@@ -13,7 +13,7 @@
 using namespace std;
 
 
-namespace mvc {
+namespace mvcpp {
 
 IP::IP(long ip) {
 	octets[3] = ip & 0xFF;
@@ -39,4 +39,4 @@ string IP::toString(){
 
 
 
-} /* namespace mvc */
+} /* namespace mvcpp*/

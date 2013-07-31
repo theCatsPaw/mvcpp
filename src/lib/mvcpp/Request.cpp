@@ -14,7 +14,7 @@
 #include <string>
 
 
-namespace mvc {
+namespace mvcpp {
 
 Request::Request(mg_request_info info): ip(info.remote_ip){
 	log.info("new Request");

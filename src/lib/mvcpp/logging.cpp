@@ -7,7 +7,7 @@
 
 #include "logging.h"
 
-namespace mvc {
+namespace mvcpp {
 
 
 string level_toString[] = {
@@ -21,41 +21,41 @@ string level_toString[] = {
 
 Logger::Logger(string loggername) {
 	name = loggername;
-	lvl = INFO;
+	lvl = Level::INFO;
 }
 
-void Logger::log(string toLog, LEVEL logLevel) {
+void Logger::log(string toLog, Level::LEVEL logLevel) {
 	if (logLevel >= lvl) {
 		LOGSTREAM<< level_toString[logLevel] << " ¦ " << name << " ¦ " << toLog << std::endl;
 	}
 }
 
-void Logger::setLevel(LEVEL logLevel) {
+void Logger::setLevel(Level::LEVEL logLevel) {
 	lvl = logLevel;
 }
 
 void Logger::trace(string toLog) {
-	log(toLog, TRACE);
+	log(toLog, Level::TRACE);
 }
 
 void Logger::debug(string toLog) {
-	log(toLog, DEBUG);
+	log(toLog, Level::DEBUG);
 }
 
 void Logger::info(string toLog) {
-	log(toLog, INFO);
+	log(toLog, Level::INFO);
 }
 
 void Logger::warn(string toLog) {
-	log(toLog, WARN);
+	log(toLog, Level::WARN);
 }
 
 void Logger::error(string toLog) {
-	log(toLog, ERROR);
+	log(toLog, Level::ERROR);
 }
 
 void Logger::critical(string toLog) {
-	log(toLog, CRITICAL);
+	log(toLog, Level::CRITICAL);
 }
 
 

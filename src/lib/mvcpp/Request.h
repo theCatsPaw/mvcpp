@@ -16,7 +16,7 @@
 
 #include <string>
 
-namespace mvc {
+namespace mvcpp {
 
 class Request {
 
@@ -29,7 +29,9 @@ public:
 	Request(mg_request_info);
 	virtual ~Request();
 	std::string toString();
+	//IP getIp();
+
 };
 
-} /* namespace mvc */
+} /* namespace mvcpp*/
 #endif /* REQUEST_H_ */
